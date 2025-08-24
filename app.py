@@ -5,9 +5,12 @@ import joblib, numpy as np, os
 app = Flask(__name__)
 model = joblib.load("logistic_regression.pkl")  # Load trained model
 
-@app.route("/", methods=["GET"])
+@app.route('/')
 def home():
-    return {"message": "ML Model API is running!", "status": "ok"}
+    return jsonify({
+        "message": "ML Model API is running!",
+        "status": "ok"
+    })
 
 
 @app.post("/predict")
