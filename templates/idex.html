@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Prediction</title>
+</head>
+<body>
+    <h1>Enter a value for prediction</h1>
+    <form method="POST">
+        <input type="number" step="any" name="value" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
