@@ -32,4 +32,6 @@ pred = model.predict(X_test)
 accuracy_score(y_test,pred)
 
 import joblib
-joblib.dump(model, "logistic regression.pkl")
+joblib.dump(model, "model.pkl")
+
+joblib.dump(sc, "scaler.pkl")  # Save the StandardScaler
