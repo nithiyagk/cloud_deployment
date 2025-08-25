@@ -4,7 +4,7 @@ import joblib
 app = Flask(__name__,template_folder="templates")
 
 # Load your ML model
-model = joblib.load("logistic_regression.pkl")
+model = joblib.load("logistic regression.pkl")
 
 @app.route("/", methods=["GET", "POST"])
 def home():
