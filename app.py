@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 import joblib
+import os
 
-app = Flask(__name__,template_folder="templates")
+app = Flask(__name__)
 
-# Load your ML model
-model = joblib.load("logistic regression.pkl")
+# Make sure the path works on Render
+model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
+model = joblib.load(model_path)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
